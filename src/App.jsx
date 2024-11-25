@@ -176,12 +176,12 @@ function Projects() {
   const projectList = [
     {
       id: 1,
-      link: "https://github.com/rayhanadri/ParkirWebApps",
+      link: "https://github.com/rayhanadri/PersonalWebProfile",
       img: "project/profile.jpg",
       name: "Personal Web Profile",
       description:
         "Web based application to show detailed profile information created using React.js and TailwindCSS.",
-      techstack: ["React.js", "Tailwind CSS"],
+      techstack: ["React.js", "Vite", "Tailwind CSS"],
     },
     {
       id: 2,
@@ -502,10 +502,6 @@ function App() {
         <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
       </div>
     );
-  }
-
-  function changeMenu(menu) {
-    setMenu(menu);
   }
 
   return (
