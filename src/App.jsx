@@ -56,30 +56,35 @@ function Profile() {
           <div className="mx-auto text-center text-2xl font-bold text-violet-100 md:text-3xl lg:text-4xl mb-4">
             <a
               href="mailto:rayhanadri@gmail.com"
+              target="_blank"
               className="hover:shadow-lg hover:text-violet-400 mx-2"
             >
               <FontAwesomeIcon icon={faEnvelope} />
             </a>
             <a
               href="https://www.linkedin.com/in/rayhan-adri/"
+              target="_blank"
               className="hover:shadow-lg hover:text-violet-400 mx-2"
             >
               <FontAwesomeIcon icon={faLinkedin} />
             </a>
             <a
               href="https://www.facebook.com/rayadri97"
+              target="_blank"
               className="hover:shadow-lg hover:text-violet-400 mx-2"
             >
               <FontAwesomeIcon icon={faFacebookSquare} />
             </a>
             <a
               href="https://www.instagram.com/rayadri97"
+              target="_blank"
               className="hover:shadow-lg hover:text-violet-400 mx-2"
             >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
             <a
               href="https://wa.me/+6285966556997"
+              target="_blank"
               className="hover:shadow-lg hover:text-violet-400 mx-2"
             >
               <FontAwesomeIcon icon={faWhatsapp} />
@@ -283,12 +288,14 @@ function Resume() {
         <div className="bg-gradient-to-r from-indigo-600 to-sky-300 m-2 rounded-md p-4 text-right">
           <a
             href="/CV_Rayhan.pdf"
+            target="_blank"
             className="bg-violet-700 text-violet-100 rounded-md p-2 mr-2 hover:bg-violet-900"
           >
             Download (Functional)
           </a>
           <a
             href="/CV_Rayhan_ATS.pdf"
+            target="_blank"
             className="bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900"
           >
             Download (ATS Format)
