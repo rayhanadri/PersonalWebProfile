@@ -119,12 +119,20 @@ const CopyButton = ({ text }) => {
     });
   };
 
-  return <button className="bg-violet-800 text-violet-100 p-2 ml-2 mt-2 rounded-md" onClick={handleCopy}><FontAwesomeIcon icon={faCopy} />{copied ? " Copied!" : " Copy"}</button>;
+  return (
+    <button
+      className="bg-violet-800 text-violet-100 p-2 ml-2 mt-2 rounded-md"
+      onClick={handleCopy}
+    >
+      <FontAwesomeIcon icon={faCopy} />
+      {copied ? " Copied!" : " Copy"}
+    </button>
+  );
 };
 
 const TextInputWithCopy = ({ label, placeholder, value, onChange }) => {
   return (
-    <div >
+    <div>
       <label className="block text-left mx-2 mt-4 font-bold">{label}</label>
       <input
         type="text"
@@ -148,7 +156,7 @@ function Contact() {
     <>
       <div className="container w-full md:w-11/12 lg:w-9/12 mx-auto mt-4">
         <div className="bg-violet-100 px-4 pb-4 pt-2 m-2 rounded-lg mx-auto text-center">
-          <div className="mx-auto text-left w-full pl-20 md:w-1/2">
+          <div className="mx-auto text-left w-full pl-20 md:w-8/12 xl:w-1/2 xl:pl-24">
             <TextInputWithCopy
               label="Email"
               value="rayhanadri@gmail.com"
@@ -281,13 +289,13 @@ function Resume() {
       <div className="w-full md:w-11/12 lg:w-9/12 mx-auto  text-justify rounded-lg pt-2 mb-2">
         <div className="bg-gradient-to-r from-indigo-600 to-sky-300 m-2 rounded-md p-4 text-right">
           <a
-            href="#"
+            href="/CV_Rayhan.pdf"
             className="bg-violet-700 text-violet-100 rounded-md p-2 mr-2 hover:bg-violet-900"
           >
             Download (Functional)
           </a>
           <a
-            href="#"
+            href="/CV_Rayhan_ATS.pdf"
             className="bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900"
           >
             Download (ATS Format)
@@ -372,12 +380,9 @@ function Resume() {
               <ul className="list-disc ml-4">
                 <li>
                   Practicum Laboratory Assistant for basic programming, basic
-                  database, and database, administration courses.
+                  database, and database administration courses.
                 </li>
-                <li>
-                  Create software documentation, manage software releases, and
-                  manage code versioning.
-                </li>
+                <li>Mentor students and collaborate with lecturers in doing practical courses.</li>
                 <li>Assess students’ practicum grades.</li>
               </ul>
             </div>

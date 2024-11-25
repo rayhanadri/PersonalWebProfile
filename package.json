@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "twdev": "npx tailwindcss -i ./tailwind/input.css -o ./public/style.css --watch"
+    "twdev": "npx tailwindcss -i ./tailwind/input.css -o ./public/style.css --watch",
+    "twprod": "npx tailwindcss -i ./tailwind/input.css -o ./public/style.css --minify"
   },
   "dependencies": {
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
