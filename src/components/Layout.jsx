@@ -62,7 +62,7 @@ const Layout = () => (
   <div>
     <Header />
     <main>
-      <Outlet /> {/* Renders the matched child route */}
+      <Outlet /> 
     </main>
   </div>
 );

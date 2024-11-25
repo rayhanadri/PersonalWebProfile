@@ -1,8 +1,4 @@
-/* eslint-disable react/prop-types */
-import { useState, useRef } from "react";
-import Header from "./components/Header";
-
-import Layout from "./components/Layout";
+import { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faCopy } from "@fortawesome/free-solid-svg-icons";
 import {
@@ -11,8 +7,6 @@ import {
   faInstagram,
   faFacebookSquare,
 } from "@fortawesome/free-brands-svg-icons";
-
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 function Profile() {
   return (
@@ -109,7 +103,7 @@ function Profile() {
   );
 }
 
-const CopyButton = ({ text }) => {
+function CopyButton({ text }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = () => {
@@ -128,9 +122,9 @@ const CopyButton = ({ text }) => {
       {copied ? " Copied!" : " Copy"}
     </button>
   );
-};
+}
 
-const TextInputWithCopy = ({ label, placeholder, value, onChange }) => {
+function TextInputWithCopy({ label, value, onChange }) {
   return (
     <div>
       <label className="block text-left mx-2 mt-4 font-bold">{label}</label>
@@ -138,14 +132,13 @@ const TextInputWithCopy = ({ label, placeholder, value, onChange }) => {
         type="text"
         value={value}
         onChange={onChange}
-        placeholder={placeholder}
         className="ml-2 px-3 py-2 border shadow rounded"
         readOnly={true}
       />
       <CopyButton text={value} />
     </div>
   );
-};
+}
 
 function Contact() {
   const [setIsCopied1] = useState(false);
@@ -382,7 +375,10 @@ function Resume() {
                   Practicum Laboratory Assistant for basic programming, basic
                   database, and database administration courses.
                 </li>
-                <li>Mentor students and collaborate with lecturers in doing practical courses.</li>
+                <li>
+                  Mentor students and collaborate with lecturers in doing
+                  practical courses.
+                </li>
                 <li>Assess students’ practicum grades.</li>
               </ul>
             </div>
@@ -452,20 +448,106 @@ function Resume() {
   );
 }
 
-function App() {
+function Header({ currentMenu, setMenu }) {
+  console.log(currentMenu);
+  const menuName = [
+    { id: 1, link: "profile", name: "Profile" },
+    { id: 2, link: "resume", name: "Resume" },
+    { id: 3, link: "projects", name: "Projects" },
+    { id: 4, link: "contact", name: "Contact" },
+  ];
+
+  const handleButtonClick = (id) => {
+    setMenu(id);
+  };
+
   return (
-    <Router>
-      <Routes>
-        {/* Apply Layout to a group of routes */}
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Profile />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/resume" element={<Resume />} />
-          {/* <Route path="about" element={<About />} /> */}
-        </Route>
-      </Routes>
-    </Router>
+    <>
+      <div className="mx-auto text-center bg-slate-800">
+        {menuName.map((menu) => (
+          <a
+            key={menu.id}
+            className={`${
+              currentMenu === menu.id ? "bg-violet-900" : "bg-violet-600"
+            } p-2 mt-2 mx-1 w-24 text-xl inline-block text-center text-white cursor-pointer hover:bg-violet-900 active:bg-violet-900 rounded-t-lg ease-in-out duration-100 hover:scale-110`}
+            onClick={() => {
+              handleButtonClick(menu.id);
+            }}
+          >
+            {menu.name}
+          </a>
+        ))}
+      </div>
+    </>
+  );
+}
+
+function App() {
+  const [currentMenu, setMenu] = useState(1);
+
+  // Assume `menu` is a variable you want to map to `currentMenu`
+  // const menu = "profile"; // Example value
+
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate a delay to mimic loading behavior
+    const timer = setTimeout(() => setIsLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className="flex items-center justify-center min-h-screen bg-gray-900">
+        <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin"></div>
+      </div>
+    );
+  }
+
+  function changeMenu(menu) {
+    setMenu(menu);
+  }
+
+  return (
+    <>
+      <Header currentMenu={currentMenu} setMenu={setMenu} />
+      <div
+        className={`transition-all duration-500 ease-in-out ${
+          currentMenu === 1
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-5 pointer-events-none"
+        }`}
+      >
+        {currentMenu === 1 && <Profile />}
+      </div>
+      <div
+        className={`transition-all duration-500 ease-in-out ${
+          currentMenu === 2
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-5 pointer-events-none"
+        }`}
+      >
+        {currentMenu === 2 && <Resume />}
+      </div>
+      <div
+        className={`transition-all duration-500 ease-in-out ${
+          currentMenu === 3
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-5 pointer-events-none"
+        }`}
+      >
+        {currentMenu === 3 && <Projects />}
+      </div>
+      <div
+        className={`transition-all duration-500 ease-in-out ${
+          currentMenu === 4
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 -translate-y-5 pointer-events-none"
+        }`}
+      >
+        {currentMenu === 4 && <Contact />}
+      </div>
+    </>
   );
 }
 
