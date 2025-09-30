@@ -180,7 +180,35 @@ function Contact() {
 function Projects() {
   const projectList = [
     {
-      id: 1,
+      id: 10,
+      link: "https://github.com/rayhanadri/book-rent-client",
+      img: "project/library_cli.png",
+      name: "Book Rent CLI",
+      description:
+        "Book Rent CLI is a lightweight, console-based client application that serves as the command-line interface for the Library Book Rent API. Built with Go (Golang), this tool provides a simple and intuitive way to interact with the backend system directly from the terminal.",
+      techstack: ["Golang"],
+    },
+
+    {
+      id: 9,
+      link: "https://github.com/rayhanadri/book-rent-api",
+      img: "project/library_api.png",
+      name: "Library Book Rent API",
+      description:
+        "Library Book Rent API is a robust backend system designed to streamline the process of renting books in libraries. Built with high-performance Go (Golang), it offers fast and reliable services for managing book availability, user rentals, and due dates.",
+      techstack: ["Golang", "PostgreSQL", "Echo Framework"],
+    },
+    {
+      id: 8,
+      link: "https://github.com/rayhanadri/circle-app",
+      img: "project/circle_app.png",
+      name: "Circle Management App",
+      description:
+        "Circle App is a project management application built on Laravel, designed specifically for creative circles, art teams, and design collectives. It provides a streamlined platform to organize, track, and collaborate on various artworks and design projects.",
+      techstack: ["PHP", "Laravel", "MySQL", "Bootstrap"],
+    },
+    {
+      id: 7,
       link: "https://github.com/rayhanadri/PersonalWebProfile",
       img: "project/profile.jpg",
       name: "Personal Web Profile",
@@ -189,7 +217,7 @@ function Projects() {
       techstack: ["React.js", "Vite", "Tailwind CSS"],
     },
     {
-      id: 2,
+      id: 6,
       link: "https://github.com/rayhanadri/ParkirWebApps",
       img: "project/parkirapp.jpg",
       name: "Parkir Web Apps",
@@ -198,7 +226,7 @@ function Projects() {
       techstack: ["PHP", "Laravel", "MySQL", "Bootstrap"],
     },
     {
-      id: 3,
+      id: 5,
       link: "https://github.com/rayhanadri/IndonesianVtuberDB",
       img: "project/ivdb.jpg",
       name: "Indonesian Vtuber Database",
@@ -216,7 +244,7 @@ function Projects() {
       techstack: ["React.js", "Vite"],
     },
     {
-      id: 5,
+      id: 3,
       link: "https://github.com/rayhanadri/NJS_ContactApp_MongoDB",
       img: "project/contact.jpg",
       name: "Node.js Contact App",
@@ -225,7 +253,7 @@ function Projects() {
       techstack: ["Node.js", "MongoDB", "Bootstrap"],
     },
     {
-      id: 6,
+      id: 2,
       link: "https://github.com/rayhanadri/genderize_web",
       img: "project/genderize.jpg",
       name: "Gender Checker Web UI",
@@ -234,7 +262,7 @@ function Projects() {
       techstack: ["Javascript", "Bootstrap"],
     },
     {
-      id: 7,
+      id: 1,
       link: "https://github.com/rayhanadri/SIMasjid-laravel-clean",
       img: "project/simasjid.jpg",
       name: "Mosque Asset Information System",
@@ -252,7 +280,7 @@ function Projects() {
             className="bg-violet-100 container mb-2 rounded-md shadow-lg overflow-hidden mx-auto"
             key={project.id}
           >
-            <a href={project.link} target="_blank">
+            <a href={project.link} target="_blank" rel="noopener noreferrer">
               <img src={project.img} alt={project.name} />
               <h3 className="text-justify px-4 pt-2 text-lg font-semibold underline text-violet-800 hover:font-bold hover:text-fuchsia-900">
                 {project.name}
@@ -263,7 +291,7 @@ function Projects() {
             </p>
             <div className="p-4  mb-4 text-xs">
               <div>
-                {project.techstack.map((item, index) => (
+                {project.techstack.map((item) => (
                   <a
                     href="#"
                     className="font-semibold bg-violet-800 text-violet-100 p-2 mb-10 mx-1 rounded-md"
@@ -286,19 +314,19 @@ function Resume() {
     <>
       <div className="w-full md:w-11/12 lg:w-9/12 mx-auto  text-justify pt-2 mb-2">
         <div className="bg-gradient-to-r from-indigo-600 to-sky-300 m-2 rounded-md p-3 text-center sm:text-right">
-          <a
+          {/* <a
             href="/CV_Rayhan.pdf"
             target="_blank"
             className="block sm:inline-block sm:mr-2 bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900"
           >
             Download (Functional)
-          </a>
+          </a> */}
           <a
             href="/CV_Rayhan_ATS.pdf"
             target="_blank"
             className="block sm:inline-block bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900 mt-2 sm:mt-0"
           >
-            Download (ATS Format)
+            Download
           </a>
         </div>
       </div>
@@ -307,6 +335,34 @@ function Resume() {
           <span className="block text-center mb-2 font-bold text-xl bg-violet-900 text-violet-100 mx-auto rounded-md pb-1  ">
             Experience
           </span>
+                    <div>
+            <h3 className="font-bold text-lg text-violet-900">
+              Nawa Data Solutions
+            </h3>
+            <div>
+              <div className="grid grid-cols-2">
+                <h4 className="inline-block font-semibold text-base">
+                  Software Engineer One Loan
+                </h4>
+                <div className="text-right">Aug 2025 - Present</div>
+              </div>
+            </div>
+            <div>
+              <h4>Job Description: </h4>
+              <ul className="list-disc ml-4">
+                <li>
+                  Developed software to support Loan Channeling System.
+                </li>
+                <li>
+                  Provided IT solutions to maintain Loan Channeling System.
+                </li>
+                <li>
+                  Performed software unit testing to ensure quality of deliverables.
+                </li>
+              </ul>
+            </div>
+            <hr className="border-2 border-violet-100 opacity-50 my-2" />
+          </div>
           <div>
             <h3 className="font-bold text-lg text-violet-900">
               Sinarmas Asia Pulp & Paper (APP)
@@ -322,18 +378,23 @@ function Resume() {
             <div>
               <h4>Job Description: </h4>
               <ul className="list-disc ml-4">
-                <li>Maintain software systems.</li>
+                <li>Maintained and troubleshooted software systems.</li>
                 <li>
-                  Develop new software systems to support user works, improve
-                  company business processes, and improve reporting processes.
+                  Developed software systems to improve company business
+                  processes and reporting processes.
                 </li>
                 <li>
-                  Enhance existing software to be relevant to business
-                  processes.
+                  Collaborated with stakeholders to accelerate the company's
+                  automation process.
                 </li>
                 <li>
-                  Support and collaborate with various stakeholders to speed up
-                  the company automation process.
+                  Notable developed software systems: Equipment Effectiveness
+                  Report, Total Productive Maintenance, Machinery Equipment
+                  Audit.
+                </li>
+                <li>
+                  Tech stack used: PHP, C#, MVC ASP, Dotnet Framework, Ms SQL
+                  Server
                 </li>
               </ul>
             </div>
@@ -352,14 +413,24 @@ function Resume() {
             <div>
               <h4>Job Description: </h4>
               <ul className="list-disc ml-4">
-                <li>Develop software to support the bank payment solution.</li>
                 <li>
-                  Create software documentation, manage software releases, and
-                  manage code versioning.
+                  Developed software to support the bank's payment solution.
                 </li>
                 <li>
-                  Create test cases and do software tests to ensure the quality
-                  of delivered software.
+                  Created software documentation, managed software releases, and
+                  handled code versioning.
+                </li>
+                <li>
+                  Created test cases and performed software testing to ensure
+                  the quality of delivered software.
+                </li>
+                <li>
+                  Notable project: Biller Payment, Reconciliation and
+                  Settlement, Acquiring Payment.
+                </li>
+                <li>
+                  Tech stack used: C#, Dotnet Framework, Ms SQL Server,
+                  PostgreSQL, Oracle SQL Developer
                 </li>
               </ul>
             </div>
@@ -373,20 +444,22 @@ function Resume() {
               <h4 className="inline-block font-semibold text-base">
                 Laboratory Assistant
               </h4>
-              <div className="text-right">Aug 2021 - Mar 2023</div>
+              <div className="text-right">Jul 2016 - Jun 2018</div>
             </div>
             <div>
               <h4>Job Description: </h4>
               <ul className="list-disc ml-4">
                 <li>
-                  Practicum Laboratory Assistant for basic programming, basic
-                  database, and database administration courses.
+                  Served as a Practicum Laboratory Assistant for basic
+                  programming, basic database, and database administration
+                  courses.
                 </li>
                 <li>
-                  Mentor students and collaborate with lecturers in doing
-                  practical courses.
+                  Mentored and assisted students during practicum sessions.
                 </li>
-                <li>Assess students’ practicum grades.</li>
+                <li>
+                  Assessed students’ practicum performance and assigned grades.
+                </li>
               </ul>
             </div>
           </div>
