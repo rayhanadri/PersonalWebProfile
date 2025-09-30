@@ -120,7 +120,7 @@ function CopyButton({ text }) {
 
   return (
     <button
-      className="bg-violet-800 text-violet-100 p-2 ml-2 mt-2 rounded-md"
+      className="bg-violet-800 text-violet-100 p-2 ml-2 mt-2 rounded-md text-sm"
       onClick={handleCopy}
     >
       <FontAwesomeIcon icon={faCopy} />
@@ -154,7 +154,7 @@ function Contact() {
     <>
       <div className="container w-full md:w-11/12 lg:w-9/12 mx-auto mt-4">
         <div className="bg-violet-100 px-4 pb-4 pt-2 m-2 rounded-lg mx-auto text-center">
-          <div className="mx-auto text-left w-full pl-20 md:w-8/12 xl:w-1/2 xl:pl-24">
+          <div className="mx-auto text-left w-full pl-8 pb-6 sm:pl-20 md:w-8/12 xl:w-1/2 xl:pl-24">
             <TextInputWithCopy
               label="Email"
               value="rayhanadri@gmail.com"
@@ -284,19 +284,19 @@ function Projects() {
 function Resume() {
   return (
     <>
-      <div className="w-full md:w-11/12 lg:w-9/12 mx-auto  text-justify rounded-lg pt-2 mb-2">
-        <div className="bg-gradient-to-r from-indigo-600 to-sky-300 m-2 rounded-md p-4 text-right">
+      <div className="w-full md:w-11/12 lg:w-9/12 mx-auto  text-justify pt-2 mb-2">
+        <div className="bg-gradient-to-r from-indigo-600 to-sky-300 m-2 rounded-md p-3 text-center sm:text-right">
           <a
             href="/CV_Rayhan.pdf"
             target="_blank"
-            className="bg-violet-700 text-violet-100 rounded-md p-2 mr-2 hover:bg-violet-900"
+            className="block sm:inline-block sm:mr-2 bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900"
           >
             Download (Functional)
           </a>
           <a
             href="/CV_Rayhan_ATS.pdf"
             target="_blank"
-            className="bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900"
+            className="block sm:inline-block bg-violet-700 text-violet-100 rounded-md p-2 hover:bg-violet-900 mt-2 sm:mt-0"
           >
             Download (ATS Format)
           </a>
@@ -476,7 +476,7 @@ function Header({ currentMenu, setMenu }) {
             key={menu.id}
             className={`${
               currentMenu === menu.id ? "bg-violet-900" : "bg-violet-600"
-            } p-2 mt-2 mx-1 w-24 text-xl inline-block text-center text-white cursor-pointer hover:bg-violet-900 active:bg-violet-900 rounded-t-lg ease-in-out duration-100 hover:scale-110`}
+            } p-2 mt-2 mx-1 w-16 text-sm sm:text-xl sm:w-24 inline-block text-center text-white cursor-pointer hover:bg-violet-900 active:bg-violet-900 rounded-t-lg ease-in-out duration-100 hover:scale-110`}
             onClick={() => {
               handleButtonClick(menu.id);
             }}
